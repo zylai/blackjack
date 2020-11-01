@@ -39,3 +39,19 @@ When the player declines to be hit with another card, the player and dealer's ca
 - Add a bank to allow betting
 - Show simple statistics at the end of game
 - Allow double down
+
+### Miscellaneous
+
+Playing cards ASCII art from https://www.asciiart.eu/miscellaneous/playing-cards
+
+```
+ _____
+|A .  | _____
+| /.\ ||A ^  | _____
+|(_._)|| / \ ||A _  | _____
+|  |  || \ / || ( ) ||A_ _ |
+|____A||  .  ||(_'_)||( v )|
+       |____A||  |  || \ / |
+              |____A||  .  |
+                     |____A|
+```
