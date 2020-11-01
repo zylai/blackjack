@@ -145,22 +145,22 @@ compare()
 {
 	if [ $dealer_value -eq $player_value ]
 	then
-		echo "Push. Dealer's hand: $dealer_value" && break
+		echo "Push. Dealer's hand: $dealer_value" && return 0
 	fi
 
 	if [ $dealer_value -lt $player_value ]
         then
-                echo "You win! Dealer's hand: $dealer_value" && break
+                echo "You win! Dealer's hand: $dealer_value" && return 0
         fi
 
 	if [ $dealer_value -gt $player_value ] && [ $dealer_value -gt 21 ]
         then
-                echo "You win! Dealer's hand: $dealer_value" && break
+                echo "You win! Dealer's hand: $dealer_value" && return 0
         fi
 
 	if [ $dealer_value -gt $player_value ]
         then
-                echo "You lost. Dealer's hand: $dealer_value" && break
+                echo "You lost. Dealer's hand: $dealer_value" && return 0
         fi
 }
 
@@ -208,7 +208,7 @@ do
         	fi
 	done
 
-	while [ $player_value -le 21 ]
+	while [ $player_value -lt 21 ]
 	do
 		printf "Hit? y|n: "
 		read choice
@@ -217,7 +217,7 @@ do
 			hit player
 			update_ace player
 		else
-			compare
+			compare && break
 		fi
 	done
 
@@ -233,6 +233,9 @@ do
 		replay=yes
 	else
 		echo "Bye!"
-		replay=no && exit
+		replay=no
 	fi
+
 	done
+
+exit 0
