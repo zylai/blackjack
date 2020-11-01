@@ -1,4 +1,4 @@
-# blackjack
+# Bash Blackjack
 
 A simple blackjack game written in Bash. Tested with Ubuntu 18. Download and execute game.sh.
 
