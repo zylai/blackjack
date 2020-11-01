@@ -8,6 +8,8 @@ chmod +x game.sh
 ./game.sh
 ```
 
+Fairly standard and watered down version of Blackjack with a few special rules to keep it simple.
+
 ### Rules
 
 - Whoever gets closest to 21 without going bust wins the round
