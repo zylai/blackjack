@@ -1,14 +1,12 @@
 # Bash Blackjack
 
-A simple blackjack game written in Bash. Tested with Ubuntu 18. Download, create `temp` directory, and execute game.sh.
+Fairly standard and watered down version of Blackjack with a few special rules to keep it simple. Written in Bash and can be played in a terminal window. Tested with Ubuntu 18. Download, create `temp` directory (only on first run, this folder is needed to store the values of the shuffled deck and the dealer and player's pool of cards), and execute game.sh.
 
 ```
 mkdir temp
 chmod +x game.sh
 ./game.sh
 ```
-
-Fairly standard and watered down version of Blackjack with a few special rules to keep it simple.
 
 ### Rules
 
