@@ -208,7 +208,7 @@ do
         	fi
 	done
 
-	while [ $player_value -lt 21 ]
+	while [ $dealer_value -ne 21 ] && [ $player_value -le 21 ]
 	do
 		printf "Hit? y|n: "
 		read choice
