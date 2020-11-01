@@ -23,8 +23,16 @@ chmod +x game.sh
 
 ### Functionality
 
-A standard 52-card deck is used and the deck is shuffled at the beginning of each round (sorry, no house or player advantage here). 12 cards are then assigned to the dealer and the player's pool to draw from, each. This is the maximum theoretical number of cards needed in a round (best case scenario: four aces, four 2s, and three 3s, plus another 3 to go bust). The dealer and player's pool of cards can be seen in `temp/dealer` and `temp/player`, respectively. Two cards are then dealt to the dealer and player. The player can see their own two cards plus one of the dealer's cards. The player will then be prompted on whether they would like to draw another card. They can do this as many times as they like until going bust. 
+A standard 52-card deck is used and the deck is shuffled at the beginning of each round (sorry, no house or player advantage here). 12 cards are then assigned to the dealer and the player's pool to draw from, each. This is the maximum theoretical number of cards needed in a round (best case scenario: four aces, four 2s, and three 3s, plus another 3 to go bust). The dealer and player's pool of cards can be seen in `temp/dealer` and `temp/player`, respectively. Two cards are then dealt to the dealer and player. The player can see their own two cards plus one of the dealer's cards. The player will then be prompted on whether they would like to draw another card. They can do this as many times as they like until going bust. If the player goes bust, they automatically lose the round.
 
 Meanwhile, a simple algorithm determines whether the dealer will draw another card:
 
-The dealer will always draw if their cards are 15 or under and will never draw if their cards are 20 or over. Outside that range, a random number between 0 and 9 will be generated to determine the dealer's risk level. At values 16 and 17, the dealer will draw if the risk level is 0 or 1 (20% chance). At 18 and 19, the dealer will only draw if the risk level is 0 (10% chance). This risk level is re-generated on every draw. The chances that the dealer will draw two cards in a row when their hand is above 15 is extremely low.
+The dealer will always draw if their cards are 15 or under and will never draw if their cards are 20 or over. Outside that range, a random number between 0 and 9 will be generated to determine the dealer's risk level. At values 16 and 17, the dealer will draw if the risk level is 0 or 1 (20% chance). At 18 and 19, the dealer will only draw if the risk level is 0 (10% chance). This risk level is re-generated on every draw. The chances that the dealer will draw two cards in a row when their hand is above 15 is extremely low. The dealer will not automatically lose the round after going bust.
+
+When the player declines to be hit with another card, the player and dealer's cards will be compared and whoever's hand is closest to 21 wins the round. The value of the dealer's hand will then be revealed to the player.
+
+### Roadmap
+
+- Add a bank to allow betting
+- Show simple statistics at the end of game
+- Allow double down
