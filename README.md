@@ -30,7 +30,7 @@ Meanwhile, a simple algorithm determines whether the dealer will draw another ca
 
 The dealer will always draw if their cards are 15 or under and will never draw if their cards are 20 or over. Outside that range, a random number between 0 and 9 will be generated to determine the dealer's risk level. At values 16 and 17, the dealer will draw if the risk level is 0 or 1 (20% chance). At 18 and 19, the dealer will only draw if the risk level is 0 (10% chance). This risk level is re-generated on every draw. The chances that the dealer will draw two cards in a row when their hand is above 15 is extremely low. The dealer will not automatically lose the round after going bust.
 
-A `dynamic_ace`function determines whether ace will take the value of 1 or 11. Ace will always take the value of 11 unless that value causes a hand to go bust. In that case, ace will take the value of 1. This is re-calculated after each additional card is drawn. A counter keeps track of how many aces a hand has and compares it to how many times the ace has turned from from "soft" to "hard". 
+A `dynamic_ace` function determines whether ace will take the value of 1 or 11. Ace will always take the value of 11 unless that value causes a hand to go bust. In that case, ace will take the value of 1. This is re-calculated after each additional card is drawn. A counter keeps track of how many aces a hand has and compares it to how many times the ace has turned from from "soft" to "hard". 
 
 When the player declines to be hit with another card, the player and dealer's cards will be compared and whoever's hand is closest to 21 wins the round. The value of the dealer's hand will then be revealed to the player.
 
