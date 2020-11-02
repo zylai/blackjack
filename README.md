@@ -1,6 +1,6 @@
 # Bash Blackjack
 
-Fairly standard and watered down version of Blackjack with a few special rules to keep it simple. Written in Bash and can be played in a terminal window. Tested with Ubuntu 18. Download, create `temp` directory (only on first run, this folder is needed to store the values of the shuffled deck and the dealer and player's pool of cards), and execute game.sh.
+Fairly standard but watered down version of Blackjack with a few special rules to keep it simple. Written in Bash and can be played in a terminal window. Tested with Ubuntu 18. Download, create `temp` directory (only on first run, this folder is needed to store the values of the shuffled deck and the dealer and player's pool of cards), and execute game.sh.
 
 ```
 mkdir temp
@@ -34,11 +34,23 @@ A `dynamic_ace`function determines whether ace will take the value of 1 or 11. A
 
 When the player declines to be hit with another card, the player and dealer's cards will be compared and whoever's hand is closest to 21 wins the round. The value of the dealer's hand will then be revealed to the player.
 
+### Known Issues
+
+- Round does not end properly if player gets dealt a 21 for their first two cards
+	- Game will continue to ask whether the player would like to draw another card
+- Dealer's card value not calculating correctly if hand contains an ace
+	- This results in some rounds whether the dealer's hand is below 16. 
+	- Seems to be a bug related to the `dynamic_ace` function
+
 ### Roadmap
 
 - Add a bank to allow betting
 - Show simple statistics at the end of game
 - Allow double down
+- Refactor code
+	- Use return statements in functions instead of `echo`
+		- I did not know that it is possible to return things in a Bash function when I originally wrote this in 2017
+	- Draw cards within main `game.sh` script instead of `cat`ing from `./cards`
 
 ### Miscellaneous
 
