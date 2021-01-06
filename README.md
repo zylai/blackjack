@@ -3,9 +3,26 @@
 Fairly standard but watered down version of Blackjack with a few special rules to keep it simple. Written in Bash, tested with Ubuntu 18. Download, create `temp` directory (only on first run, this folder is needed to store the values of the shuffled deck and the dealer and player's pool of cards), and execute game.sh.
 
 ```
-mkdir temp
-chmod +x game.sh
-./game.sh
+$ mkdir temp
+$ chmod +x game.sh
+$ ./game.sh
+Dealer's hand:
+ _____	 _____
+|5 ^  |	|?    |
+| / \ |	|     |
+| \ / |	|  ?  |
+|  .  |	|     |
+|____5|	|____?|
+
+Your hand: 
+ _____	 _____
+|Q ^  |	|10.  |
+| / \ |	| /.\ |
+| \ / |	|(_._)|
+|  .  |	|  |  |
+|____Q|	|___10|
+Value: 20
+Hit? y|n: 
 ```
 
 ### Deviation from normal rules
@@ -38,7 +55,7 @@ When the player declines to be hit with another card, the player and dealer's ca
 	- Seems to be a bug related to the `dynamic_ace` function
 
 ### Roadmap
-
+- Check for the existence of `temp` directory and create one if necessary
 - Add a bank to allow betting
 - Show simple statistics at the end of game
 - Allow double down
