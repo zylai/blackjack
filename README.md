@@ -1,6 +1,6 @@
 # Bash Blackjack
 
-Fairly standard but watered down version of Blackjack with a few special rules to keep it simple. Written in Bash, tested with Ubuntu 18. Download, create `temp` directory (only on first run, this folder is needed to store the values of the shuffled deck and the dealer and player's pool of cards), and execute game.sh.
+Fairly standard but watered down version of Blackjack with a few special rules to keep it simple. Written in Bash, tested with Ubuntu 20.04 (Bash 4.4.20). Download, create `temp` directory (only on first run, this folder is needed to store the values of the shuffled deck and the dealer and player's pool of cards), and execute game.sh.
 
 ```
 $ mkdir temp
